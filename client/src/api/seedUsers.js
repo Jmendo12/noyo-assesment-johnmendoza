@@ -1,11 +1,11 @@
 
-async function seedUsers() {
+export default async function seedUsers() {
 
-  const response = await fetch('/seed');
+  const response = await fetch('/seed', {
+    method: "POST"
+  });
 
-  const userIds = await response.json();
+  const data = await response.json();
 
-  return userIds;
+  return data.user_ids[0];
 }
-
-export default seedUsers;

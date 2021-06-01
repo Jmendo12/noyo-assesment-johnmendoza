@@ -13,10 +13,10 @@ export default function UserAddressManager() {
     <main>
       <div>
         {
-          isLoading && <p>Seeding user ids, please wait.</p>
+          isLoading && <p>Loading user ids, please wait.</p>
         }
         {
-          isError && <p>An error occurred when seeding the data: {error}</p>
+          isError && <p>An error occurred when loading the user data: {error.message}</p>
         }
       </div>
       <Select

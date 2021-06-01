@@ -15,7 +15,7 @@ export function AddressInfo({ userId }) {
         isLoading && <p>Loading user address information.</p>
       }
       {
-        isError && <p>An error occurred when fetching the user's address info {error}</p>
+        isError && <p>An error occurred when fetching the user's address info {error.message}</p>
       }
       <AddressList
         addressList={userAddresses}

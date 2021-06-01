@@ -19,7 +19,7 @@ export function AddressEventList({ addressId }) {
         isLoading && <p>Loading address events</p>
       }
       {
-        isError && <p>An error occurred when fetching address events: {error}</p>
+        isError && <p>An error occurred when fetching address events: {error.message}</p>
       }
       {
         addressEvents.length === 0 && <p>No address events to display</p>

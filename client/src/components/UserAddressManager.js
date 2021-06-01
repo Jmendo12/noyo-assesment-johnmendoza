@@ -1,6 +1,7 @@
 import React from 'react';
 import { useUsers, useSelectedUser } from '../hooks';
 import { Select } from './Select';
+import { AddressInfo } from './AddressInfo';
 
 export default function UserAddressManager() {
 
@@ -29,6 +30,7 @@ export default function UserAddressManager() {
           }))
         }
       />
+      <AddressInfo userId={selectedUser} />
     </main>
   )
 }

@@ -1,8 +1,8 @@
 import { useQuery } from 'react-query';
-import { seedUsers } from '../api';
+import { getUsers } from '../api';
 
 export default function useSeededUsers() {
-  const { data, error, isLoading, isError } = useQuery('seedUsers', seedUsers);
+  const { data, error, isLoading, isError } = useQuery('seedUsers', getUsers);
 
   return {
     userIds: data ?? [],

@@ -1,10 +1,10 @@
 import React from 'react';
-import { useSeededUsers, useSelectedUser } from '../hooks';
+import { useUsers, useSelectedUser } from '../hooks';
 import { Select } from './Select';
 
 export default function UserAddressManager() {
 
-  const { userIds, error, isLoading, isError } = useSeededUsers();
+  const { userIds, error, isLoading, isError } = useUsers();
 
   const { selectedUser, handleSelectedUserChange } = useSelectedUser();
 

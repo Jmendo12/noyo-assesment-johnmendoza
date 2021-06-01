@@ -1,2 +1,2 @@
 
-export { default as seedUsers } from './seedUsers';
+export { default as getUsers } from './getUsers';

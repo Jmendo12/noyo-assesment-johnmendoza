@@ -5,7 +5,7 @@ export default function useSeededUsers() {
   const { data, error, isLoading, isError } = useQuery('seedUsers', seedUsers);
 
   return {
-    userIds: data,
+    userIds: data ?? [],
     error,
     isLoading,
     isError

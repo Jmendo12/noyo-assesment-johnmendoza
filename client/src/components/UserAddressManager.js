@@ -1,9 +1,12 @@
 import React from 'react';
-import { useSeededUsers } from '../hooks';
+import { useSeededUsers, useSelectedUser } from '../hooks';
+import { Select } from './Select';
 
 export default function UserAddressManager() {
 
   const { userIds, error, isLoading, isError } = useSeededUsers();
+
+  const { selectedUser, handleSelectedUserChange } = useSelectedUser();
 
   return (
     <main>
@@ -15,10 +18,17 @@ export default function UserAddressManager() {
           isError && <p>An error occurred when seeding the data: {error}</p>
         }
       </div>
-      {
-        !isLoading && !isError &&
-        userIds.map((userId, index) => <p key={index}>{userId}</p>)
-      }
+      <Select
+        label="User Id: "
+        selectedValue={selectedUser}
+        onChange={handleSelectedUserChange}
+        options={
+          userIds.map((userId) => ({
+            text: userId,
+            value: userId
+          }))
+        }
+      />
     </main>
   )
 }

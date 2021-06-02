@@ -1,9 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
-
 import { QueryClient, QueryClientProvider } from 'react-query'
-
-import { UserAddressManager } from './components';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { UserAddressManager, CompareAddresses } from './components';
 
 function App() {
 
@@ -11,7 +8,16 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <UserAddressManager />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <UserAddressManager />
+          </Route>
+          <Route path="/compareaddresses">
+            <CompareAddresses />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </QueryClientProvider>
   );
 }

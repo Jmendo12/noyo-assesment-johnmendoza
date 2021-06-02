@@ -10,3 +10,7 @@ export { default as useSelectedAddress } from './useSelectedAddress';
 export { default as useAddressEvents } from './useAddressEvents';
 
 export { default as useSelectedAddressEvents } from './useSelectedAddressEvent';
+
+export { default as useAddress } from './useAddress';
+
+export { default as useQuery } from './useQuery';

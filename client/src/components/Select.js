@@ -3,7 +3,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import { Select as MaterialSelect } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
 
-export function Select({ label, selectedValue = '', options = [], onChange }) {
+export function Select({ label, selectedValue = '', options = [], onChange, ...rest }) {
 
   const selectId = `select-${label}`;
   const labelId = `select-label-${label}`;
@@ -16,6 +16,7 @@ export function Select({ label, selectedValue = '', options = [], onChange }) {
         id={selectId}
         value={selectedValue}
         onChange={(e) => onChange(e.target.value)}
+        {...rest}
       >
         {
           options.map((option, index) => (
@@ -25,6 +26,6 @@ export function Select({ label, selectedValue = '', options = [], onChange }) {
           ))
         }
       </MaterialSelect>
-    </FormControl>
+    </FormControl >
   )
 }

@@ -14,3 +14,5 @@ export { default as useSelectedAddressEvents } from './useSelectedAddressEvent';
 export { default as useAddress } from './useAddress';
 
 export { default as useQuery } from './useQuery';
+
+export { default as useStyles } from './useStyles';

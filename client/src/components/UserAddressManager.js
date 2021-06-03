@@ -1,5 +1,5 @@
 import React from 'react';
-import { useUsers, useSelectedUser } from '../hooks';
+import { useUsers, useSelectedUser, useStyles } from '../hooks';
 import { Select } from './Select';
 import { AddressInfo } from './AddressInfo';
 
@@ -9,9 +9,25 @@ export default function UserAddressManager() {
 
   const { selectedUser, handleSelectedUserChange } = useSelectedUser();
 
+  const classes = useStyles({
+    main: {
+      display: 'grid',
+      gridTemplateRows: '40px 40px 1fr',
+      rowGap: '8px',
+      height: '100%',
+      padding: '24px'
+    },
+    messageContainer: {
+      gridRow: 2
+    },
+    select: {
+      width: '350px'
+    }
+  });
+
   return (
-    <main>
-      <div>
+    <main className={classes.main}>
+      <div className={classes.messageContainer}>
         {
           isLoading && <p>Loading user ids, please wait.</p>
         }
@@ -29,6 +45,7 @@ export default function UserAddressManager() {
             value: userId
           }))
         }
+        className={classes.select}
       />
       <AddressInfo userId={selectedUser} />
     </main>
